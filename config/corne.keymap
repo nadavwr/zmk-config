@@ -11,8 +11,8 @@
 
 
 #define _ESC    &mt  LCTL ESC
-#define _LSFT   &mtp LSFT Z
-#define _RSFT   &mtp RSFT FSLH
+#define _LSFT   &mt  LSFT Z
+#define _RSFT   &mt  RSFT FSLH
 #define _LGUI   &mt  LGUI SPC
 
 /*
