@@ -8,13 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-
-
-#define _ESC    &mt  LCTL ESC
-#define _LSFT   &mt  LSFT Z
-#define _RSFT   &mt  RSFT FSLH
-#define _LGUI   &mt  LGUI SPC
-
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -26,12 +19,13 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I    &kp O   &kp P    &kp BKSP
-   _ESC     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K    &kp L   &kp SCLN &kp QUOT
-   &kp LSFT _LSFT &kp X &kp C &kp V &kp B   &kp N &kp M  &kp CMMA &kp DOT _RSLH    &kp RET
-                         LALT &mo 1 _LGUI   &kp SPC &mo 2 &kp RALT
+   &kp TAB      &kp Q      &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P         &kp BKSP
+   &mt LCTL ESC &kp A      &kp S &kp D &kp F &kp G   &kp H &kp J &kp K    &kp L    &kp SCLN      &kp QUOT
+   &kp LSFT     &mt LSFT Z &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  &mt RSFT FSLH &kp RET
+                           LALT &mo 1 &mt LGUI SPC   &kp SPC &mo 2 &kp RALT
                         >;
                 };
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
