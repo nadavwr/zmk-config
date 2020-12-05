@@ -22,19 +22,19 @@
 
 
 / {
-        behaviors {
-          mtp: behavior_mod_tap_permissive {
-              compatible = "zmk,behavior-mod-tap";
-              label = "MOD_TAP_PERMISSIVE";
-              flavor = "balanced";
-          };
+        // behaviors {
+        //   mtp: behavior_mod_tap_permissive {
+        //       compatible = "zmk,behavior-mod-tap";
+        //       label = "MOD_TAP_PERMISSIVE";
+        //       flavor = "balanced";
+        //   };
 
-          ltp: behavior_layer_tap_permissive {
-              compatible = "zmk,behavior-layer-tap";
-              label = "LAYER_TAP_PERMISSIVE";
-              flavor = "balanced";
-          };
-        };
+        //   ltp: behavior_layer_tap_permissive {
+        //       compatible = "zmk,behavior-layer-tap";
+        //       label = "LAYER_TAP_PERMISSIVE";
+        //       flavor = "balanced";
+        //   };
+        // };
 
         keymap {
                 compatible = "zmk,keymap";
