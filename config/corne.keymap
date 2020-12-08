@@ -36,10 +36,10 @@
 
 #define RSFT_FSLH &mtp RSFT FSLH
 
-#define sym_layer 4
+#define sym_layer 3
 #define SYMFN(kp) &ltp sym_layer kp
 
-#define nav_layer 5
+#define nav_layer 4
 #define NAVFN(kp) &lt nav_layer kp
 
 / {
