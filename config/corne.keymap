@@ -9,8 +9,21 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+	behaviors {
+		ltp: behavior_layer_tap_permissive {
+			compatible = "zmk,behavior-hold-tap";
+			label = "LAYER_TAP_PERMISSIVE";
+			#binding-cells = <2>;
+			flavor = "balanced";
+			tapping_term_ms = <150>;
+			bindings = <&mo>, <&kp>;
+		};
+	};
+};
+
+/ {
     behaviors {
-        mtp: bevavior-mod-tap-permissive {
+        mtp: bevavior_mod_tap_permissive {
             compatible = "zmk,behavior-hold-tap";
             label = "MOD_TAP_PERMISSIVE";
             #binding-cells = <2>;
@@ -23,6 +36,9 @@
 
 #define RSFT_FSLH &mtp RSFT FSLH
 
+#define sym_layer 3
+#define SYMFN(kp) &ltp sym_layer kp
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -34,10 +50,19 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB      &kp Q       &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P     &kp BKSP
-   &mt LCTL ESC &kp A       &kp S &kp D &kp F &kp G   &kp H &kp J &kp K    &kp L    &kp SCLN  &kp QUOT
-   &kp LSFT     &mtp LSFT Z &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  RSFT_FSLH &kp RET
-                        &kp LALT &mo 1 &mt LGUI SPC   &kp SPC &mo 2 &kp RALT
+   &kp TAB      &kp Q       &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P       &kp BKSP
+   &mt LCTL ESC &kp A       &kp S &kp D &kp F &kp G   &kp H &kp J &kp K    &kp L    SYMFN(SCLN) &kp QUOT
+   &kp LSFT     &mtp LSFT Z &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  RSFT_FSLH   &kp RET
+                        &kp LALT &mo 1 &mt LGUI SPC   &mo 2 &kp SPC &kp RALT
+                        >;
+                };
+
+                sym_layer {
+                        bindings = <
+   &trans &kp DLLR &kp LPAR &kp RPAR &trans   &trans   &trans &trans   &kp MINUS &kp EQUAL &trans &trans
+   &trans &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans   &trans &kp BKSP &kp DQT   &kp SQT   &trans &trans
+   &trans &trans   &trans   &trans   &trans   &trans   &trans &trans   &trans    &trans    &trans &trans
+                                &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
