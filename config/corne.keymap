@@ -35,6 +35,8 @@
 };
 
 #define RSFT_FSLH &mtp RSFT FSLH
+#define MEH LC(LA(LSFT))
+#define HYPER LS(MEH)
 
 #define sym_layer 1
 #define SYMFN(kp) &ltp sym_layer kp
@@ -59,13 +61,13 @@
    &kp TAB      &kp Q       &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P       &kp BKSP
    &mt LCTL ESC &kp A       &kp S &kp D &kp F &kp G   &kp H &kp J &kp K    &kp L    SYMFN(SCLN) &kp RET
    &kp LSFT     &mtp LSFT Z &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  RSFT_FSLH   &kp RSFT
-              &kp LALT  &mt LGUI SPC  &mo num_layer   &mo num_layer  NAVFN(SPC)  &kp RALT                 // add F layer
+              &kp LALT  &mt LGUI SPC  &mo num_layer   &mo num_layer  NAVFN(SPC)  &kp HYPER
                         >;
                 };
 
                 sym_layer {
                         bindings = <
-   &trans &kp DLLR &kp LPAR &kp RPAR trans    &trans   &trans &kp PIPE &kp MINUS &kp EQUAL &trans &trans
+   &trans &kp DLLR &kp LPAR &kp RPAR &trans   &trans   &trans &kp PIPE &kp MINUS &kp EQUAL &trans &trans
    &trans &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans   &trans &kp BKSP &kp DQT   &kp SQT   &trans &trans
    &trans &trans   &trans   &trans   &trans   &trans   &trans &trans   &trans    &trans    &trans &trans
                                 &trans &trans &trans   &trans &trans &trans
