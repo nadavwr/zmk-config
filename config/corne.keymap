@@ -63,7 +63,7 @@
                         bindings = <
    &kp TAB      &kp Q       &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P       &kp BKSP
    &mt LCTL ESC &kp A       &kp S &kp D &kp F &kp G   &kp H &kp J &kp K    &kp L    SYMFN(SCLN) &kp SQT
-   &kp LSFT     &mtp LSFT Z &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  RSFT_FSLH   &kp RSFT
+   &kp LSFT     &mtp LSFT Z &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  RSFT_FSLH   &mt RSFT RET
               &kp LALT  &mt LGUI SPC  &mo num_layer   NUMFN(RET)  NAVFN(SPC)  COLEMAK
                         >;
                 };
