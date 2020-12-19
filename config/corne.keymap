@@ -53,21 +53,19 @@
 #define sym_layer 5
 #define SYMFN(kp) &lt sym_layer kp
 
+#define plover_layer 6
+#define PLOVER &mo plover_layer
+
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &kp TAB      &kp Q       &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P       &kp BKSP
    &mt LCTL ESC &kp A       &kp S &kp D &kp F &kp G   &kp H &kp J &kp K    &kp L    PINKY(SCLN) &kp SQT
    &kp LSFT     &mtp LSFT Z &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  RSFT_FSLH   &mt RSFT RET
-              &kp LALT  &mt LGUI SPC  &mo sym_layer   &mo num_layer  NAVFN(SPC)  COLEMAK
+              &kp LALT  &mt LGUI SPC  &mo sym_layer   &mo num_layer  NAVFN(SPC)  PLOVER
                         >;
                 };
 
@@ -115,6 +113,16 @@
                                   &trans &trans &trans     &trans &trans &trans
                         >;
                 };
+
+                plover_layer {
+                        bindings = <
+   &kp N1 &kp N1 &kp N1 &kp N1 &kp N1 &kp N1   &kp N1 &kp N1 &kp N1 &kp N1 &kp N1   &kp N1
+   &none  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp P  &kp P    &kp LBRC
+   &none  &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K  &kp L  &kp SCLN &kp QUOT
+                        &none  &kp C  &kp V    &kp N  &kp M  &none
+                        >;
+                };
+
 /*
                 empty_layer {
                         bindings = <
