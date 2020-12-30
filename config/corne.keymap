@@ -44,8 +44,7 @@
 #define _RET  &mt RSFT RET
 
 
-#define default_layer 0
-#define QWERTY &to default_layer
+#define QWERTY &to 0
 
 #define colemak_layer 1
 #define COLEMAK &to colemak_layer
