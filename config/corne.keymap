@@ -49,11 +49,11 @@
 #define colemak_layer 1
 #define COLEMAK &to colemak_layer
 
-#define pinky_layer 2
-#define PINKY(kp) &ltp pinky_layer kp
-
-#define plover_layer 3
+#define plover_layer 2
 #define PLOVER &to plover_layer
+
+#define pinky_layer 3
+#define PINKY(kp) &ltp pinky_layer kp
 
 #define nav_layer 4
 #define NAVFN(kp) &lt nav_layer kp
