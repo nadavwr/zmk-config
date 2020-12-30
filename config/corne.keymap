@@ -34,10 +34,10 @@
     };
 };
 
-#define _LMEH &mt LC(LA(LSFT)) TAB
-#define _LHPR &mt LS(_LMEH)    TAB
-#define _RMEH &mt RC(RA(RSFT)) BKSP
-#define _RHPR &mt RS(_RMEH)    BKSP
+#define _LMEH &mt LC(LA(LSFT))        TAB
+#define _LHPR &mt LS(LC(LA(LSFT)))    TAB
+#define _RMEH &mt RC(RA(RSFT))        BKSP
+#define _RHPR &mt RS(RC(RA(RSFT)))    BKSP
 #define _LCTL &mt LCTL ESC
 #define _RCTL &mt RCTL SQT
 #define _LSFT &mtp LSFT Z
