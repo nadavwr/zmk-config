@@ -65,16 +65,19 @@
 #define fn_layer 6
 #define FN &mo fn_layer
 
+#define fnfn_layer 7
+#define FNFN &lt fnfn_layer kp
+
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         bindings = <
-   _LHPR    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P       _RHPR
+   &kp TAB  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P       &kp BKSP
    _LCTL    &kp A &kp S &kp D &kp F &kp G   &kp H &kp J &kp K    &kp L    PINKY(SCLN) _RCTL
    &kp LSFT _LSFT &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  _RSFT       _RET
-     &kp LALT  &mt LGUI SPC  &mo num_layer   &mo num_layer  NAVFN(SPC)  FN
+    &kp LALT  &mt LGUI SPC  &mo num_layer   &mo num_layer  NAVFN(SPC)  FN
                         >;
                 };
 
@@ -83,16 +86,16 @@
    &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L &kp U  &kp Y  &kp SCLN &trans
    &trans &kp A &kp R &kp S &kp T &kp G   &kp M &kp N &kp E  &kp I  PINKY(O) &trans
    &trans _LSFT &kp X &kp C &kp D &kp V   &kp K &kp H &trans &trans &trans   &trans
-                 &trans  &trans  &trans   &trans  &trans  &none
+                 &trans  &trans  &trans   &trans  &trans  &trans
                         >;
                 };
 
                 plover_layer {
                         bindings = <
-   &kp N1 &kp N1 &kp N1 &kp N1 &kp N1 &kp N1   &kp N1 &kp N1 &kp N1 &kp N1 &kp N1   &kp N1
    &none  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O  &kp P    &kp LBKT
    &none  &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K  &kp L  &kp SCLN &kp QUOT
-                       &kp C  &kp V  &trans    &trans  &kp N  &kp M
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans   &trans
+                        &trans  &kp C  &kp V   &kp N  &kp M  &trans
                         >;
                 };
 
@@ -107,27 +110,36 @@
 
                 nav_layer {
                         bindings = <
-   &trans &trans &trans   &kp PG_UP &trans  &trans     &trans &kp HOME &kp UP   &kp PG_UP &trans &kp DEL
-   &trans &trans &kp HOME &kp PG_DN &kp END &trans     &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans
-   &trans &trans &trans   &trans    &trans  &trans     &trans &kp END  &trans   &kp PG_DN &trans &trans
-                            &trans  &trans  &trans     &trans  &trans  &trans
+   &trans &trans &trans &trans &trans &trans     &trans &trans   &kp UP   &trans    &trans &kp DEL
+   &trans &trans &trans &trans &trans &trans     &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans
+   &trans &trans &trans &trans &trans &trans     &trans &trans   &trans   &trans    &trans &trans
+              &trans  &trans  &mo fnfn_layer     &mo fnfn_layer  &trans  &trans
                         >;
                 };
 
                 num_layer {
                         bindings = <
-   QWERTY   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0   &trans
-   COLEMAK  &trans &trans &trans &trans &trans    &trans &kp N4 &kp N5 &kp N6 &kp CMMA &trans
-   PLOVER   &trans &trans &trans &trans &trans    &kp N0 &kp N1 &kp N2 &kp N3 &kp DOT  &trans
-                              &trans  &trans  &trans    &trans  &kp N0  &kp N0
+   &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0   &trans
+   &trans &trans &trans &trans &trans &trans    &trans &kp N4 &kp N5 &kp N6 &kp CMMA &trans
+   &trans &trans &trans &trans &trans &trans    &kp N0 &kp N1 &kp N2 &kp N3 &kp DOT  &trans
+                      &trans  &trans  &trans    &trans  &mo fnfn_layer  &kp N0
                         >;
                 };
 
                 fn_layer {
                         bindings = <
-   &trans   &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
-   &trans   &trans   &trans   &trans   &trans   &trans     &trans   &kp F4   &kp F5   &kp F6   &kp F11  &trans
-   &trans   &trans   &trans   &trans   &trans   &trans     &trans   &kp F1   &kp F2   &kp F3   &kp F12  &trans
+   QWERTY   &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
+   COLEMAK  &trans   &trans   &trans   &trans   &trans     &trans   &kp F4   &kp F5   &kp F6   &kp F11  &trans
+   PLOVER   &trans   &trans   &trans   &trans   &trans     &trans   &kp F1   &kp F2   &kp F3   &kp F12  &trans
+                                  &trans &trans &trans     &trans &trans &trans
+                        >;
+                };
+
+                fnfn_layer {
+                        bindings = <
+   &trans   &trans   &trans   &trans   &trans   &trans     &trans   &trans   &kp PG_UP &trans   &trans   &trans
+   &trans   &trans   &trans   &trans   &trans   &trans     &trans   &kp HOME &kp PG_DN &kp END  &trans   &trans
+   &trans   &trans   &trans   &trans   &trans   &trans     &trans   &trans   &trans    &trans   &trans   &trans
                                   &trans &trans &trans     &trans &trans &trans
                         >;
                 };
