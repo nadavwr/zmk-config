@@ -34,9 +34,10 @@
     };
 };
 
-#define RSFT_FSLH &mtp RSFT FSLH
-#define MEH LC(LA(LSFT))
-#define HYPER LS(MEH)
+#define _LMEH &mt LC(LA(LSFT)) TAB
+#define _LHPR &mt LS(_LMEH)    TAB
+#define _RMEH &mt RC(RA(RSFT)) BKSP
+#define _RHPR &mt RS(_RMEH)    BKSP
 #define _LCTL &mt LCTL ESC
 #define _RCTL &mt RCTL SQT
 #define _LSFT &mtp LSFT Z
@@ -70,7 +71,7 @@
 
                 default_layer {
                         bindings = <
-   &kp TAB  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P       &kp BKSP
+   _LHPR    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I    &kp O    &kp P       _RHPR
    _LCTL    &kp A &kp S &kp D &kp F &kp G   &kp H &kp J &kp K    &kp L    PINKY(SCLN) _RCTL
    &kp LSFT _LSFT &kp X &kp C &kp V &kp B   &kp N &kp M &kp CMMA &kp DOT  _RSFT       _RET
      &kp LALT  &mt LGUI SPC  &mo num_layer   &mo num_layer  NAVFN(SPC)  FN
@@ -99,7 +100,7 @@
                         bindings = <
    &kp GRAV &kp TILD &kp LPAR &kp RPAR &kp DLLR &trans   &trans &kp UNDER &kp MINUS &kp EQUAL &trans &trans
    &trans   &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans   &trans &kp BKSP  &kp SQT   &kp DQT   &trans &trans
-   &trans   &trans   &trans   &trans   &trans   &trans   &trans &kp PIPE  &kp BSLS  &trans    &trans &trans
+   &trans   &trans   &trans   &trans   &trans   &trans   &trans &kp PIPE  &kp BSLH  &trans    &trans &trans
                                 &trans  &trans  &trans   &trans  &trans  &trans
                         >;
                 };
